@@ -2,57 +2,103 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo da Música</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  
+
   <body>
-   <div class="titulo-principal">
-     <h1>Bem-vindo ao Mundo da Música</h1>
-    <p class="subtitulo">Nesse site você irá mergulhar no mundo musical e aprofundar-se em diversos tópicos desse universo.</p>
-    </div>
-    
-    <div class="instrumentos">
-      <h2 class="titulo">Instrumentos Musicais</h2>
-      <ul>
-        <li>
-          <p class="lista-item">Contrabaixo</p>
-          <img src="https://s3.wasabisys.com/michael.smserver.com.br/conta-baixo-michael-bm607n_b81e.png" width="150" height="100" alt="Imagem de Contrabaixo">
-        </li>
-        
-        <li>
-          <p class="lista-item">Guitarra</p>
-          <img src="https://s3.wasabisys.com/michael.smserver.com.br/guitarra-rocker_734f.png" width="150" height="100" alt="Imagem de Guitarra">
-          </li>
-          
-        <li>
-          <p class="lista-item">Bateria</p>
-          <img src="https://s3.wasabisys.com/michael.smserver.com.br/bateria-michael-evolve-dme620_70bd.png" width="150" height="100" alt="Imagem de Bateria">
-          </li>
-        
-        <li>
-          <p class="lista-item">Violão</p>
-          <img src="https://s3.wasabisys.com/michael.smserver.com.br/violao-eletrico-michael-folk-vmf420_cad9.png" width="150" height="100" alt="Imagem de Violão">
-          </li>
-      </ul>
+    <header class="topo">
+      <div class="logo">
+        <span>Mundo da Música</span>
       </div>
-      
-      <div class="cifra">
+      <nav class="menu">
+        <a href="#instrumentos">Instrumentos</a>
+        <a href="#cifras">Cifras</a>
+        <a href="#produtos">Cursos</a>
+      </nav>
+      <a class="botao destaque" href="pagamento.html">Começar agora</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-texto">
+          <h1>Bem-vindo ao Mundo da Música</h1>
+          <p>
+            Explore instrumentos, cifras e conteúdos exclusivos para evoluir sua musicalidade com
+            uma jornada completa do iniciante ao avançado.
+          </p>
+          <div class="hero-botoes">
+            <a class="botao" href="#instrumentos">Ver instrumentos</a>
+            <a class="botao secundario" href="cifra.html">Aprender cifras</a>
+          </div>
+        </div>
+        <div class="hero-info">
+          <div class="card-info">
+            <h2>+120 aulas</h2>
+            <p>Conteúdo atualizado com especialistas do mercado.</p>
+          </div>
+          <div class="card-info">
+            <h2>Materiais bônus</h2>
+            <p>Ebooks, exercícios e guias para praticar em casa.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="instrumentos" id="instrumentos">
+        <h2 class="titulo">Instrumentos Musicais</h2>
+        <p class="subtitulo">Conheça alguns dos instrumentos mais buscados pela comunidade.</p>
+        <ul>
+          <li class="card-instrumento">
+            <p class="lista-item">Contrabaixo</p>
+            <img src="https://s3.wasabisys.com/michael.smserver.com.br/conta-baixo-michael-bm607n_b81e.png" width="150" height="100" alt="Imagem de Contrabaixo">
+          </li>
+
+          <li class="card-instrumento">
+            <p class="lista-item">Guitarra</p>
+            <img src="https://s3.wasabisys.com/michael.smserver.com.br/guitarra-rocker_734f.png" width="150" height="100" alt="Imagem de Guitarra">
+          </li>
+
+          <li class="card-instrumento">
+            <p class="lista-item">Bateria</p>
+            <img src="https://s3.wasabisys.com/michael.smserver.com.br/bateria-michael-evolve-dme620_70bd.png" width="150" height="100" alt="Imagem de Bateria">
+          </li>
+
+          <li class="card-instrumento">
+            <p class="lista-item">Violão</p>
+            <img src="https://s3.wasabisys.com/michael.smserver.com.br/violao-eletrico-michael-folk-vmf420_cad9.png" width="150" height="100" alt="Imagem de Violão">
+          </li>
+        </ul>
+      </section>
+
+      <section class="cifra" id="cifras">
         <h2 class="titulo">Cifras</h2>
-        <p class="subtitulo">Clique abaixo para conhecer essa nossa área.</p>
-        <a href="cifra.html">
-          <img src="https://play.google.com/store/apps/details?id=br.com.petaxxon.cifras&hl=pt" width="150" height="100" alt="Imagem de Cifra">
-        </a>
-      </div>
-      
-      <div class="produtos">
+        <p class="subtitulo">Acesse cifras organizadas por estilo e nível de dificuldade.</p>
+        <a class="botao" href="cifra.html">Conhecer cifras</a>
+      </section>
+
+      <section class="produtos" id="produtos">
         <h2 class="titulo">Nossos Cursos e Ebooks</h2>
-        <p class="subtitulo">Veja alguns dos nossos produtos abaixo</p>
-        <a href="pagamento.html">
-         <button>Comprar</button>
-        </a>
-      </div>
-      
+        <p class="subtitulo">Planos para estudar com aulas, exercícios e suporte da comunidade.</p>
+        <div class="planos">
+          <div class="plano">
+            <h3>Plano Essencial</h3>
+            <p>Ideal para começar: videoaulas, playbacks e acesso básico.</p>
+            <strong>R$ 49,90</strong>
+          </div>
+          <div class="plano destaque">
+            <h3>Plano Completo</h3>
+            <p>Inclui mentorias, ebooks e acesso premium às cifras.</p>
+            <strong>R$ 89,90</strong>
+          </div>
+        </div>
+        <a class="botao destaque" href="pagamento.html">Comprar agora</a>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>© 2024 Mundo da Música. Todos os direitos reservados.</p>
+      <p>Fale com a gente: contato@mundodamusica.com</p>
+    </footer>
   </body>
 </html>
