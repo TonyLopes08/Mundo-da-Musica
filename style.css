@@ -1,0 +1,87 @@
+body {
+  background-color: #2A1F3D;
+  color: #EDE9FE;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Textos */
+.titulo-principal {
+  font-size: 32px;
+  color: ##FBBF24;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.titulo {
+  font-size: 24px;
+  color: #A78BFA;
+}
+
+.subtitulo {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.lista-item {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Seções */
+.instrumentos,
+.cifra,
+.produtos,
+.formulario {
+  background-color: #3B2F5B;
+  border-radius: 12px;
+  margin: 40px 20px;
+  padding: 25px;
+}
+
+.instrumentos ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Blocos secundários */
+.voltar {
+  border-radius: 12px;
+  margin: 30px 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Botões */
+button {
+  background-color: #8B5CF6;
+  color: #F5F3FF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7C3AED;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Listas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
