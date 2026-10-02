@@ -1,6 +1,9 @@
 // Tom atualmente selecionado
 let tomAtual = 'C';
 
+// Lista de IDs de acordes que existem no dicionário
+let acordesDoDicionario = [];
+
 // Lista dos tons disponíveis
 const TONS_DISPONIVEIS = ['C', 'G', 'D', 'A', 'E', 'F', 'Bb'];
 
@@ -17,6 +20,17 @@ const CLASSE_QUALIDADE = {
   'menor': 'tag-menor',
   'diminuto': 'tag-diminuto'
 };
+
+// Carrega os acordes do dicionário pra saber quais existem
+async function carregarAcordesDoDicionario() {
+  try {
+    const resposta = await fetch('dados/acordes.json');
+    const dados = await resposta.json();
+    acordesDoDicionario = dados.acordes.map(a => a.nome);
+  } catch (erro) {
+    console.error('Erro ao carregar dicionário:', erro);
+  }
+}
 
 // Renderiza os botões de tom no topo
 function renderizarSeletorTom() {
@@ -77,25 +91,40 @@ function atualizarCards() {
     return;
   }
 
-  container.innerHTML = acordes.map((acorde, i) => `
-    <div class="acorde-campo"
-         data-acorde="${acorde.nome}"
-         data-posicao="${i}"
-         data-qualidade="${acorde.qualidade}">
-      <p class="campo-grau">${acorde.grau}</p>
-      <h3 class="campo-nome">${acorde.nome}</h3>
-      <div class="campo-tags">
-        <span class="tag ${CLASSE_FUNCAO[acorde.funcao]}">${acorde.funcao}</span>
-        <span class="tag ${CLASSE_QUALIDADE[acorde.qualidade]}">${acorde.qualidade}</span>
+  container.innerHTML = acordes.map((acorde, i) => {
+    // Verifica se esse acorde existe no dicionário (pelo nome)
+    const existeNoDicionario = acordesDoDicionario.includes(acorde.nome);
+
+    // Botão "ver no dicionário" só aparece se existir
+    const botaoDicionario = existeNoDicionario
+      ? `<a href="acordes.html?acorde=${encodeURIComponent(acorde.nome)}"
+            class="btn-dicionario"
+            title="Ver no dicionário"
+            onclick="event.stopPropagation()">🔍</a>`
+      : '';
+
+    return `
+      <div class="acorde-campo"
+           data-acorde="${acorde.nome}"
+           data-posicao="${i}"
+           data-qualidade="${acorde.qualidade}">
+        ${botaoDicionario}
+        <p class="campo-grau">${acorde.grau}</p>
+        <h3 class="campo-nome">${acorde.nome}</h3>
+        <div class="campo-tags">
+          <span class="tag ${CLASSE_FUNCAO[acorde.funcao]}">${acorde.funcao}</span>
+          <span class="tag ${CLASSE_QUALIDADE[acorde.qualidade]}">${acorde.qualidade}</span>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
   configurarAudioCampo();
 }
 
 // Inicialização
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await carregarAcordesDoDicionario();
   renderizarSeletorTom();
   configurarSeletorTom();
   atualizarCards();

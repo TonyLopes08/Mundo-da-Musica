@@ -18,7 +18,6 @@ function desenharDiagrama(acorde) {
   const espacoCordas = larguraUtil / (numCordas - 1);
   const espacoCasas = alturaUtil / numCasas;
 
-  // Mapeia estado de cada corda (6 = mais grave, 1 = mais aguda)
   const estados = [
     acorde.corda6, acorde.corda5, acorde.corda4,
     acorde.corda3, acorde.corda2, acorde.corda1
@@ -26,7 +25,6 @@ function desenharDiagrama(acorde) {
 
   let svg = `<svg viewBox="0 0 ${largura} ${altura}" class="diagrama" xmlns="http://www.w3.org/2000/svg">`;
 
-  // 1. Símbolos acima (X, O ou vazio)
   estados.forEach((estado, i) => {
     const x = margemX + i * espacoCordas;
     const y = margemY - 10;
@@ -38,20 +36,17 @@ function desenharDiagrama(acorde) {
     }
   });
 
-  // 2. Linhas verticais (cordas)
   for (let i = 0; i < numCordas; i++) {
     const x = margemX + i * espacoCordas;
     svg += `<line x1="${x}" y1="${margemY}" x2="${x}" y2="${margemY + alturaUtil}" class="corda" />`;
   }
 
-  // 3. Linhas horizontais (casas)
   for (let i = 0; i <= numCasas; i++) {
     const y = margemY + i * espacoCasas;
-    const grossura = i === 0 ? 3 : 1; // pestana (linha de cima) mais grossa
+    const grossura = i === 0 ? 3 : 1;
     svg += `<line x1="${margemX}" y1="${y}" x2="${margemX + larguraUtil}" y2="${y}" class="casa" stroke-width="${grossura}" />`;
   }
 
-  // 4. Bolinhas dos dedos
   acorde.dedos.forEach(dedo => {
     const indiceCorda = 6 - dedo.corda;
     const x = margemX + indiceCorda * espacoCordas;
@@ -71,7 +66,7 @@ const filtrosAtivos = {
   dificuldade: 'todos'
 };
 
-// Aplica os filtros: esconde cards que não batem
+// Aplica os filtros
 function aplicarFiltros() {
   const cards = document.querySelectorAll('.acorde-card');
 
@@ -122,12 +117,39 @@ function configurarAudio(acordes) {
       const acorde = acordes.find(a => a.id === id);
       if (acorde) {
         tocarAcorde(acorde);
-        // Feedback visual
         card.classList.add('ativo-audio');
         setTimeout(() => card.classList.remove('ativo-audio'), 300);
       }
     });
   });
+}
+
+// Lê a URL e destaca o acorde pedido (ex: acordes.html?acorde=C)
+function destacarAcordeDaURL() {
+  const params = new URLSearchParams(window.location.search);
+  const nome = params.get('acorde');
+
+  if (!nome) return;
+
+  const cards = document.querySelectorAll('.acorde-card');
+  let encontrado = false;
+
+  cards.forEach(card => {
+    const nomeCard = card.dataset.nome;
+    if (nomeCard === nome) {
+      card.classList.add('destacado');
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      encontrado = true;
+    }
+  });
+
+  if (!encontrado) {
+    const aviso = document.createElement('div');
+    aviso.className = 'aviso-acorde';
+    aviso.textContent = `O acorde "${nome}" ainda não está no dicionário.`;
+    const container = document.querySelector('#lista-acordes');
+    if (container) container.before(aviso);
+  }
 }
 
 async function renderizarAcordes() {
@@ -139,7 +161,11 @@ async function renderizarAcordes() {
     if (!container) return;
 
     container.innerHTML = dados.acordes.map(acorde => `
-      <div class="acorde-card" data-tipo="${acorde.tipo}" data-dificuldade="${acorde.dificuldade}" data-id="${acorde.id}">
+      <div class="acorde-card"
+           data-tipo="${acorde.tipo}"
+           data-dificuldade="${acorde.dificuldade}"
+           data-id="${acorde.id}"
+           data-nome="${acorde.nome}">
         <h3 class="acorde-nome">${acorde.nome}</h3>
         <p class="acorde-completo">${acorde.nomeCompleto}</p>
         ${desenharDiagrama(acorde)}
@@ -152,6 +178,7 @@ async function renderizarAcordes() {
 
     configurarFiltros();
     configurarAudio(dados.acordes);
+    destacarAcordeDaURL();
 
   } catch (erro) {
     console.error('Erro ao carregar acordes:', erro);

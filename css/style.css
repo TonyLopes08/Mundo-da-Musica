@@ -479,3 +479,48 @@ li {
   border-color: #FBBF24;
   background-color: #4A3B6E;
 }
+
+/* Botão "ver no dicionário" dentro do card do campo harmônico */
+.acorde-campo {
+  position: relative; /* pro botão posicionar dentro */
+}
+
+.btn-dicionario {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #2A1F3D;
+  color: #EDE9FE;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.btn-dicionario:hover {
+  opacity: 1;
+  background-color: #8B5CF6;
+}
+
+/* Card destacado no dicionário */
+.acorde-card.destacado {
+  border-color: #FBBF24;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+/* Aviso quando acorde não existe no dicionário */
+.aviso-acorde {
+  background-color: #3B2F5B;
+  border-left: 4px solid #FBBF24;
+  color: #EDE9FE;
+  padding: 12px 20px;
+  margin: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+}
