@@ -1,8 +1,22 @@
 // Tom atualmente selecionado
 let tomAtual = 'C';
 
-// Lista dos tons disponíveis (mesma do campo-harmonico.js)
+// Lista dos tons disponíveis
 const TONS_DISPONIVEIS = ['C', 'G', 'D', 'A', 'E', 'F', 'Bb'];
+
+// Mapeia função → classe CSS da tag
+const CLASSE_FUNCAO = {
+  'Tônica': 'tag-tonica',
+  'Subdominante': 'tag-subdominante',
+  'Dominante': 'tag-dominante'
+};
+
+// Mapeia qualidade → classe CSS da tag
+const CLASSE_QUALIDADE = {
+  'maior': 'tag-maior',
+  'menor': 'tag-menor',
+  'diminuto': 'tag-diminuto'
+};
 
 // Renderiza os botões de tom no topo
 function renderizarSeletorTom() {
@@ -24,25 +38,41 @@ function configurarSeletorTom() {
     botao.addEventListener('click', () => {
       tomAtual = botao.dataset.tom;
 
-      // Atualiza visual: só o botão clicado fica ativo
       botoes.forEach(b => {
         b.classList.toggle('ativo', b === botao);
       });
 
-      // No 3.2.2 isso vai atualizar os cards:
       atualizarCards();
     });
   });
 }
 
-// Placeholder — no 3.2.2 vamos implementar
+// Renderiza os 7 cards do campo harmônico
 function atualizarCards() {
-  console.log('Tom selecionado:', tomAtual);
-  // Aqui vai entrar a lógica de calcular e renderizar os 7 acordes
+  const container = document.querySelector('#cards-campo');
+  if (!container) return;
+
+  const acordes = calcularCampoHarmonico(tomAtual);
+  if (!acordes) {
+    container.innerHTML = '<p>Tom não suportado.</p>';
+    return;
+  }
+
+  container.innerHTML = acordes.map(acorde => `
+    <div class="acorde-campo" data-acorde="${acorde.nome}">
+      <p class="campo-grau">${acorde.grau}</p>
+      <h3 class="campo-nome">${acorde.nome}</h3>
+      <div class="campo-tags">
+        <span class="tag ${CLASSE_FUNCAO[acorde.funcao]}">${acorde.funcao}</span>
+        <span class="tag ${CLASSE_QUALIDADE[acorde.qualidade]}">${acorde.qualidade}</span>
+      </div>
+    </div>
+  `).join('');
 }
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
   renderizarSeletorTom();
   configurarSeletorTom();
+  atualizarCards();
 });

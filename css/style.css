@@ -416,3 +416,61 @@ li {
   margin: 30px 20px;
   min-height: 100px;
 }
+
+/* Cards do campo harmônico */
+.acorde-campo {
+  background-color: #3B2F5B;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.acorde-campo:hover {
+  border-color: #FBBF24;
+  transform: translateY(-2px);
+}
+
+.campo-grau {
+  font-size: 14px;
+  color: #A78BFA;
+  font-weight: bold;
+  margin: 0 0 4px;
+  letter-spacing: 1px;
+}
+
+.campo-nome {
+  font-size: 32px;
+  color: #FBBF24;
+  margin: 0 0 12px;
+}
+
+.campo-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Tags de função harmônica */
+.tag-tonica {
+  background-color: #10B981;
+  color: #022C22;
+}
+
+.tag-subdominante {
+  background-color: #3B82F6;
+  color: #EFF6FF;
+}
+
+.tag-dominante {
+  background-color: #EF4444;
+  color: #FEF2F2;
+}
+
+/* Tag de qualidade diminuto (as outras já existem) */
+.tag-diminuto {
+  background-color: #6B7280;
+  color: #F9FAFB;
+}
