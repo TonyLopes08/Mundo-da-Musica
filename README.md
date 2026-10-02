@@ -2,7 +2,7 @@
 
 Site educativo sobre música, feito com HTML, CSS e JavaScript puro.
 
-O projeto reúne conteúdo para quem está começando a aprender música — instrumentos, teoria, cifras — e oferece um dicionário de acordes interativo com diagramas do braço do violão e áudio gerado em tempo real.
+O projeto reúne conteúdo para quem está começando a aprender música — instrumentos, teoria, cifras — e oferece um dicionário de acordes interativo e uma calculadora de campo harmônico, com diagramas do braço do violão e áudio gerado em tempo real.
 
 ---
 
@@ -15,6 +15,11 @@ O projeto reúne conteúdo para quem está começando a aprender música — ins
   - Diagrama do braço do violão desenhado em SVG
   - Filtros por tipo (maior/menor) e dificuldade (iniciante/intermediário)
   - Áudio do acorde gerado em tempo real com Web Audio API
+- **Campo harmônico (calculadora):**
+  - Escolha um tom (C, G, D, A, E, F, Bb)
+  - Veja os 7 acordes que combinam com ele, com grau, função e qualidade
+  - Clique em cada acorde pra ouvir (notas calculadas, sem arquivos de som)
+  - Botão que leva direto ao acorde no dicionário
 
 ---
 
@@ -26,6 +31,7 @@ O projeto reúne conteúdo para quem está começando a aprender música — ins
   - Renderização dinâmica de conteúdo
   - SVG gerado programaticamente
   - Web Audio API para síntese de som
+  - Cálculo musical (escalas, intervalos, tríades)
 - **JSON** como fonte de dados (conteúdo separado da estrutura)
 
 ---
@@ -63,24 +69,27 @@ Nota: em alguns Windows, a porta 8000 está reservada pelo sistema. Use a 8080.
 ## 📁 Estrutura do projeto
 
 Mundo-da-Musica/
-├── index.html                 # Página inicial
-├── instrumentos.html          # Lista de instrumentos
-├── teoria.html                # Teoria musical
-├── cifra.html                 # Cifras
-├── acordes.html               # Dicionário de acordes (interativo)
+├── index.html                     # Página inicial
+├── instrumentos.html              # Lista de instrumentos
+├── teoria.html                    # Teoria musical
+├── cifra.html                     # Cifras
+├── acordes.html                   # Dicionário de acordes (interativo)
+├── campo-harmonico.html           # Calculadora de campo harmônico
 ├── css/
-│   └── style.css              # Estilo único do site
+│   └── style.css                  # Estilo único do site
 ├── js/
-│   ├── render-instrumentos.js # Renderiza instrumentos a partir do JSON
-│   ├── render-teoria.js       # Renderiza teoria a partir do JSON
-│   ├── render-cifras.js       # Renderiza cifras a partir do JSON
-│   ├── render-acordes.js      # Renderiza acordes + diagrama SVG + filtros
-│   └── audio.js               # Síntese de som com Web Audio API
+│   ├── render-instrumentos.js     # Renderiza instrumentos a partir do JSON
+│   ├── render-teoria.js           # Renderiza teoria a partir do JSON
+│   ├── render-cifras.js           # Renderiza cifras a partir do JSON
+│   ├── render-acordes.js          # Renderiza acordes + diagrama SVG + filtros
+│   ├── render-campo-harmonico.js  # Renderiza campo harmônico + seletor de tom
+│   ├── campo-harmonico.js         # Lógica de cálculo musical (escalas, tríades)
+│   └── audio.js                   # Síntese de som com Web Audio API
 └── dados/
-    ├── instrumentos.json      # Dados dos instrumentos
-    ├── teoria.json            # Dados da teoria
-    ├── cifras.json            # Dados das cifras
-    └── acordes.json           # Dados dos acordes
+    ├── instrumentos.json          # Dados dos instrumentos
+    ├── teoria.json                # Dados da teoria
+    ├── cifras.json                # Dados das cifras
+    └── acordes.json               # Dados dos acordes
 
 ---
 
@@ -99,12 +108,11 @@ O JS renderiza tudo automaticamente. Não precisa tocar no HTML.
 
 ## 🗺️ Próximos passos
 
-- [ ] Calculadora de campo harmônico (escolher tom, ver acordes que combinam)
-- [ ] Progressões famosas com reprodução (I-V-vi-IV, ii-V-I)
+- [ ] Progressões famosas no campo harmônico (I-V-vi-IV, ii-V-I, vi-IV-I-V, I-IV-V)
 - [ ] Mais acordes no dicionário (sétimas, suspensos, com nona)
-- [ ] Biblioteca de cifras com busca e transposição de tom
 - [ ] Metrônomo e afinação de referência
-- [ ] Modo de progresso: marcar lições estudadas
+- [ ] Biblioteca de cifras com busca e transposição de tom
+- [x] Calculadora de campo harmônico (escolher tom, ver acordes que combinam)
 
 ---
 
