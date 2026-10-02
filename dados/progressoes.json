@@ -1,0 +1,72 @@
+{
+  "progressoes": [
+    {
+      "id": "pop",
+      "nome": "I - V - vi - IV",
+      "apelido": "A progressão do pop",
+      "graus": [0, 4, 5, 3],
+      "exemplos": [
+        "Don't Stop Believin' — Journey",
+        "With or Without You — U2",
+        "Let It Be — The Beatles",
+        "Someone Like You — Adele"
+      ]
+    },
+    {
+      "id": "vi-iv-i-v",
+      "nome": "vi - IV - I - V",
+      "apelido": "A prima da I-V-vi-IV",
+      "graus": [5, 3, 0, 4],
+      "exemplos": [
+        "Africa — Toto",
+        "Grenade — Bruno Mars",
+        "Poker Face — Lady Gaga",
+        "No Woman No Cry — Bob Marley"
+      ]
+    },
+    {
+      "id": "rock",
+      "nome": "I - IV - V",
+      "apelido": "A base do rock e do blues",
+      "graus": [0, 3, 4],
+      "exemplos": [
+        "Twist and Shout — The Beatles",
+        "Wild Thing — The Troggs",
+        "La Bamba — Ritchie Valens"
+      ]
+    },
+    {
+      "id": "jazz",
+      "nome": "ii - V - I",
+      "apelido": "A progressão do jazz",
+      "graus": [1, 4, 0],
+      "exemplos": [
+        "Autumn Leaves — jazz standard",
+        "Fly Me to the Moon — Frank Sinatra",
+        "Girl from Ipanema — Tom Jobim"
+      ]
+    },
+    {
+      "id": "nao-volta",
+      "nome": "I - IV - vi - V - I",
+      "apelido": "A progressão que não volta",
+      "graus": [0, 3, 5, 4, 0],
+      "exemplos": [
+        "Let It Be — The Beatles",
+        "A Thousand Years — Christina Perri",
+        "Hallelujah — Leonard Cohen"
+      ]
+    },
+    {
+      "id": "jornada",
+      "nome": "I - vi - iii - IV - V - I",
+      "apelido": "A jornada completa",
+      "graus": [0, 5, 2, 3, 4, 0],
+      "exemplos": [
+        "Don't Look Back in Anger — Oasis",
+        "Viva la Vida — Coldplay",
+        "Hallelujah — Leonard Cohen"
+      ]
+    }
+  ]
+}

@@ -524,3 +524,94 @@ li {
   border-radius: 8px;
   font-size: 14px;
 }
+
+/* Seção de progressões */
+.lista-progressoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 30px 20px;
+}
+
+.progressao-card {
+  background-color: #3B2F5B;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.progressao-card:hover {
+  border-color: #A78BFA;
+}
+
+.progressao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.progressao-nome {
+  font-size: 20px;
+  color: #FBBF24;
+  margin: 0;
+}
+
+.btn-tocar {
+  background-color: #8B5CF6;
+  color: #F5F3FF;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.btn-tocar:hover {
+  background-color: #7C3AED;
+}
+
+.progressao-apelido {
+  font-size: 13px;
+  color: #A78BFA;
+  font-style: italic;
+  margin: 0 0 12px;
+}
+
+.progressao-sequencia {
+  font-size: 14px;
+  color: #EDE9FE;
+  background-color: #2A1F3D;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 0 0 12px;
+  font-weight: bold;
+}
+
+.progressao-exemplos {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.progressao-exemplos li {
+  font-size: 13px;
+  color: #EDE9FE;
+  margin-bottom: 4px;
+}
+
+/* Card do campo harmônico aceso durante a progressão */
+.acorde-campo.tocando {
+  border-color: #FBBF24;
+  background-color: #4A3B6E;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+}
