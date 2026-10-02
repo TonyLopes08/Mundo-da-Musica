@@ -20,6 +20,7 @@ O projeto reúne conteúdo para quem está começando a aprender música — ins
   - Veja os 7 acordes que combinam com ele, com grau, função e qualidade
   - Clique em cada acorde pra ouvir (notas calculadas, sem arquivos de som)
   - Botão que leva direto ao acorde no dicionário
+  - Progressões famosas (I-V-vi-IV, vi-IV-I-V, I-IV-V, ii-V-I, I-IV-vi-V-I, I-vi-iii-IV-V-I) com reprodução em sequência e exemplos de músicas
 
 ---
 
@@ -82,14 +83,15 @@ Mundo-da-Musica/
 │   ├── render-teoria.js           # Renderiza teoria a partir do JSON
 │   ├── render-cifras.js           # Renderiza cifras a partir do JSON
 │   ├── render-acordes.js          # Renderiza acordes + diagrama SVG + filtros
-│   ├── render-campo-harmonico.js  # Renderiza campo harmônico + seletor de tom
+│   ├── render-campo-harmonico.js  # Renderiza campo harmônico + seletor de tom + progressões
 │   ├── campo-harmonico.js         # Lógica de cálculo musical (escalas, tríades)
 │   └── audio.js                   # Síntese de som com Web Audio API
 └── dados/
     ├── instrumentos.json          # Dados dos instrumentos
     ├── teoria.json                # Dados da teoria
     ├── cifras.json                # Dados das cifras
-    └── acordes.json               # Dados dos acordes
+    ├── acordes.json               # Dados dos acordes
+    └── progressoes.json           # Dados das progressões famosas
 
 ---
 
@@ -101,6 +103,7 @@ Graças à arquitetura com JSON, adicionar conteúdo é simples:
 - **Nova seção de teoria:** adicione um objeto em dados/teoria.json
 - **Novo acorde:** adicione um objeto em dados/acordes.json com as posições dos dedos
 - **Nova cifra:** adicione um objeto em dados/cifras.json
+- **Nova progressão:** adicione um objeto em dados/progressoes.json
 
 O JS renderiza tudo automaticamente. Não precisa tocar no HTML.
 
@@ -108,11 +111,11 @@ O JS renderiza tudo automaticamente. Não precisa tocar no HTML.
 
 ## 🗺️ Próximos passos
 
-- [ ] Progressões famosas no campo harmônico (I-V-vi-IV, ii-V-I, vi-IV-I-V, I-IV-V)
+- [x] Calculadora de campo harmônico (escolher tom, ver acordes que combinam)
+- [x] Progressões famosas no campo harmônico (I-V-vi-IV, ii-V-I, vi-IV-I-V, I-IV-V)
 - [ ] Mais acordes no dicionário (sétimas, suspensos, com nona)
 - [ ] Metrônomo e afinação de referência
 - [ ] Biblioteca de cifras com busca e transposição de tom
-- [x] Calculadora de campo harmônico (escolher tom, ver acordes que combinam)
 
 ---
 
