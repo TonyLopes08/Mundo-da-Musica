@@ -29,3 +29,22 @@ ferramentas interativas que o usuário pode usar enquanto estuda.
 - Git + GitHub para versionamento
 
 ## 📁 Estrutura
+.
+├── index.html # Página inicial
+├── instrumentos.html # Instrumentos musicais
+├── teoria.html # Teoria musical
+├── cifra.html # Cifras
+├── acordes.html # Dicionário de acordes (interativo)
+├── css/
+│ └── style.css # Estilos
+├── js/
+│ ├── audio.js # Web Audio API
+│ ├── render-instrumentos.js
+│ ├── render-teoria.js
+│ ├── render-cifras.js
+│ └── render-acordes.js
+└── dados/
+├── instrumentos.json
+├── teoria.json
+├── cifras.json
+└── acordes.json
