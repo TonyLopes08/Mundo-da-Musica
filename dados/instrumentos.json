@@ -1,0 +1,30 @@
+[
+  {
+    "id": "contrabaixo",
+    "nome": "Contrabaixo",
+    "descricao": "Faz a base grave da música e liga o ritmo à harmonia.",
+    "imagem": "https://s3.wasabisys.com/michael.smserver.com.br/conta-baixo-michael-bm607n_b81e.png",
+    "alt": "Imagem de Contrabaixo"
+  },
+  {
+    "id": "guitarra",
+    "nome": "Guitarra",
+    "descricao": "Elétrica, toca acordes, riffs e solos. O som muda muito com amplificador e efeitos.",
+    "imagem": "https://s3.wasabisys.com/michael.smserver.com.br/guitarra-rocker_734f.png",
+    "alt": "Imagem de Guitarra"
+  },
+  {
+    "id": "bateria",
+    "nome": "Bateria",
+    "descricao": "Marca o tempo e a energia da música com tambores e pratos.",
+    "imagem": "https://s3.wasabisys.com/michael.smserver.com.br/bateria-michael-evolve-dme620_70bd.png",
+    "alt": "Imagem de Bateria"
+  },
+  {
+    "id": "violao",
+    "nome": "Violão",
+    "descricao": "Acompanha vozes e toca melodias. É um bom primeiro instrumento para aprender acordes.",
+    "imagem": "https://s3.wasabisys.com/michael.smserver.com.br/violao-eletrico-michael-folk-vmf420_cad9.png",
+    "alt": "Imagem de Violão"
+  }
+]

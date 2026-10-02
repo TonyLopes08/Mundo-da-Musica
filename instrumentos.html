@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrumentos | Mundo da Música</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="instrumentos.html" class="ativo">Instrumentos</a>
+      <a href="teoria.html">Teoria musical</a>
+      <a href="cifra.html">Cifras</a>
+      <a href="acordes.html">Acordes</a>
+    </nav>
+
+    <h1 class="titulo-principal">Instrumentos musicais</h1>
+
+    <div class="instrumentos">
+      <h2 class="titulo">Cordas e percussão</h2>
+      <ul id="lista-instrumentos">
+        <!-- Os itens são inseridos via JS a partir de dados/instrumentos.json -->
+      </ul>
+    </div>
+
+    <div class="voltar">
+      <a href="index.html"><button>Voltar à página principal</button></a>
+    </div>
+
+    <script src="js/render-instrumentos.js"></script>
+  </body>
+</html>

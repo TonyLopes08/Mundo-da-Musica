@@ -1,0 +1,32 @@
+{
+  "secoes": [
+    {
+      "titulo": "As notas",
+      "conteudo": "A música ocidental usa sete notas naturais: Dó, Ré, Mi, Fá, Sol, Lá e Si. Na cifra, elas aparecem como letras: C, D, E, F, G, A e B. Depois do Si, a sequência volta ao Dó, uma oitava acima."
+    },
+    {
+      "titulo": "Escala maior",
+      "conteudo": "Uma escala é uma sequência de notas organizada por distâncias fixas. A escala maior segue o padrão tom, tom, semitom, tom, tom, tom, semitom. Em Dó maior, ela usa só as notas naturais:",
+      "tabela": {
+        "cabecalho": ["Grau", "1", "2", "3", "4", "5", "6", "7"],
+        "linhas": [
+          ["Nota", "Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"],
+          ["Cifra", "C", "D", "E", "F", "G", "A", "B"]
+        ]
+      }
+    },
+    {
+      "titulo": "Acordes",
+      "conteudo": "Um acorde é um grupo de notas tocadas juntas. O mais simples é a tríade, formada pelas notas 1, 3 e 5 da escala:",
+      "lista": [
+        "Dó maior (C): Dó, Mi, Sol. Soa estável e alegre.",
+        "Lá menor (Am): Lá, Dó, Mi. Soa mais sério ou triste."
+      ],
+      "conteudoFinal": "A diferença entre maior e menor está na terça, a segunda nota do acorde: ela fica mais distante da primeira no acorde maior e mais próxima no menor."
+    },
+    {
+      "titulo": "Compasso",
+      "conteudo": "O compasso divide a música em grupos de tempos. No 4/4, o mais comum, cada compasso tem quatro tempos, e o primeiro costuma ser o mais forte. Tente contar \"1, 2, 3, 4\" ouvindo uma música que você conhece."
+    }
+  ]
+}

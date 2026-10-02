@@ -1,0 +1,198 @@
+{
+  "acordes": [
+    {
+      "id": "c-maior",
+      "nome": "C",
+      "nomeCompleto": "Dó maior",
+      "tipo": "maior",
+      "tom": "C",
+      "dificuldade": "iniciante",
+      "corda6": "muda",
+      "corda5": 3,
+      "corda4": 2,
+      "corda3": "solta",
+      "corda2": 1,
+      "corda1": "solta",
+      "dedos": [
+        { "corda": 5, "casa": 3, "dedo": 3 },
+        { "corda": 4, "casa": 2, "dedo": 2 },
+        { "corda": 2, "casa": 1, "dedo": 1 }
+      ]
+    },
+    {
+      "id": "g-maior",
+      "nome": "G",
+      "nomeCompleto": "Sol maior",
+      "tipo": "maior",
+      "tom": "G",
+      "dificuldade": "iniciante",
+      "corda6": 3,
+      "corda5": 2,
+      "corda4": "solta",
+      "corda3": "solta",
+      "corda2": "solta",
+      "corda1": 3,
+      "dedos": [
+        { "corda": 6, "casa": 3, "dedo": 3 },
+        { "corda": 5, "casa": 2, "dedo": 2 },
+        { "corda": 1, "casa": 3, "dedo": 4 }
+      ]
+    },
+    {
+      "id": "d-maior",
+      "nome": "D",
+      "nomeCompleto": "Ré maior",
+      "tipo": "maior",
+      "tom": "D",
+      "dificuldade": "iniciante",
+      "corda6": "muda",
+      "corda5": "muda",
+      "corda4": "solta",
+      "corda3": 2,
+      "corda2": 3,
+      "corda1": 2,
+      "dedos": [
+        { "corda": 3, "casa": 2, "dedo": 1 },
+        { "corda": 1, "casa": 2, "dedo": 2 },
+        { "corda": 2, "casa": 3, "dedo": 3 }
+      ]
+    },
+    {
+      "id": "a-maior",
+      "nome": "A",
+      "nomeCompleto": "Lá maior",
+      "tipo": "maior",
+      "tom": "A",
+      "dificuldade": "iniciante",
+      "corda6": "muda",
+      "corda5": "solta",
+      "corda4": 2,
+      "corda3": 2,
+      "corda2": 2,
+      "corda1": "solta",
+      "dedos": [
+        { "corda": 4, "casa": 2, "dedo": 1 },
+        { "corda": 3, "casa": 2, "dedo": 2 },
+        { "corda": 2, "casa": 2, "dedo": 3 }
+      ]
+    },
+    {
+      "id": "e-maior",
+      "nome": "E",
+      "nomeCompleto": "Mi maior",
+      "tipo": "maior",
+      "tom": "E",
+      "dificuldade": "iniciante",
+      "corda6": "solta",
+      "corda5": 2,
+      "corda4": 2,
+      "corda3": 1,
+      "corda2": "solta",
+      "corda1": "solta",
+      "dedos": [
+        { "corda": 5, "casa": 2, "dedo": 2 },
+        { "corda": 4, "casa": 2, "dedo": 3 },
+        { "corda": 3, "casa": 1, "dedo": 1 }
+      ]
+    },
+    {
+      "id": "f-maior",
+      "nome": "F",
+      "nomeCompleto": "Fá maior",
+      "tipo": "maior",
+      "tom": "F",
+      "dificuldade": "intermediario",
+      "corda6": 1,
+      "corda5": 3,
+      "corda4": 3,
+      "corda3": 2,
+      "corda2": 1,
+      "corda1": 1,
+      "dedos": [
+        { "corda": 6, "casa": 1, "dedo": 1 },
+        { "corda": 5, "casa": 3, "dedo": 3 },
+        { "corda": 4, "casa": 3, "dedo": 4 },
+        { "corda": 3, "casa": 2, "dedo": 2 },
+        { "corda": 2, "casa": 1, "dedo": 1 },
+        { "corda": 1, "casa": 1, "dedo": 1 }
+      ]
+    },
+    {
+      "id": "b-maior",
+      "nome": "B",
+      "nomeCompleto": "Si maior",
+      "tipo": "maior",
+      "tom": "B",
+      "dificuldade": "intermediario",
+      "corda6": "muda",
+      "corda5": 2,
+      "corda4": 4,
+      "corda3": 4,
+      "corda2": 4,
+      "corda1": 2,
+      "dedos": [
+        { "corda": 5, "casa": 2, "dedo": 1 },
+        { "corda": 4, "casa": 4, "dedo": 2 },
+        { "corda": 3, "casa": 4, "dedo": 3 },
+        { "corda": 2, "casa": 4, "dedo": 4 },
+        { "corda": 1, "casa": 2, "dedo": 1 }
+      ]
+    },
+    {
+      "id": "am-menor",
+      "nome": "Am",
+      "nomeCompleto": "Lá menor",
+      "tipo": "menor",
+      "tom": "A",
+      "dificuldade": "iniciante",
+      "corda6": "muda",
+      "corda5": "solta",
+      "corda4": 2,
+      "corda3": 2,
+      "corda2": 1,
+      "corda1": "solta",
+      "dedos": [
+        { "corda": 4, "casa": 2, "dedo": 2 },
+        { "corda": 3, "casa": 2, "dedo": 3 },
+        { "corda": 2, "casa": 1, "dedo": 1 }
+      ]
+    },
+    {
+      "id": "dm-menor",
+      "nome": "Dm",
+      "nomeCompleto": "Ré menor",
+      "tipo": "menor",
+      "tom": "D",
+      "dificuldade": "iniciante",
+      "corda6": "muda",
+      "corda5": "muda",
+      "corda4": "solta",
+      "corda3": 2,
+      "corda2": 3,
+      "corda1": 1,
+      "dedos": [
+        { "corda": 3, "casa": 2, "dedo": 2 },
+        { "corda": 2, "casa": 3, "dedo": 3 },
+        { "corda": 1, "casa": 1, "dedo": 1 }
+      ]
+    },
+    {
+      "id": "em-menor",
+      "nome": "Em",
+      "nomeCompleto": "Mi menor",
+      "tipo": "menor",
+      "tom": "E",
+      "dificuldade": "iniciante",
+      "corda6": "solta",
+      "corda5": 2,
+      "corda4": 2,
+      "corda3": "solta",
+      "corda2": "solta",
+      "corda1": "solta",
+      "dedos": [
+        { "corda": 5, "casa": 2, "dedo": 2 },
+        { "corda": 4, "casa": 2, "dedo": 3 }
+      ]
+    }
+  ]
+}

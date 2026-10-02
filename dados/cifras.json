@@ -1,0 +1,27 @@
+{
+  "secoes": [
+    {
+      "titulo": "O que é uma cifra",
+      "conteudo": "A cifra é uma forma simples de escrever uma música: em vez de partitura, ela indica os acordes por letras, colocados sobre a letra da música ou numa sequência. É o formato mais usado para violão e guitarra."
+    },
+    {
+      "titulo": "Como ler os acordes",
+      "conteudo": "Uma letra sozinha é um acorde maior. O \"m\" depois da letra indica acorde menor.",
+      "tabela": {
+        "cabecalho": ["Cifra", "Nome", "Notas"],
+        "linhas": [
+          ["C", "Dó maior", "Dó, Mi, Sol"],
+          ["G", "Sol maior", "Sol, Si, Ré"],
+          ["Am", "Lá menor", "Lá, Dó, Mi"],
+          ["F", "Fá maior", "Fá, Lá, Dó"]
+        ]
+      },
+      "ordem": "tabela-antes"
+    },
+    {
+      "titulo": "Exemplo: uma progressão comum",
+      "conteudo": "Muitas músicas populares repetem a sequência abaixo. Toque cada acorde por um compasso e repita:",
+      "progressao": "C   G   Am   F"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+**Mundo da Música**
+*Site educativo sobre música, feito com HTML, CSS e JavaScript*
+
+**Sobre o projeto**
+O Mundo da Música é um site multipágina para quem está começando a aprender música.
+O conteúdo é organizado por tópicos: instrumentos musicais, teoria musical, cifras e
+um dicionário de acordes interativo. A ideia é explicar cada assunto em linguagem
+simples, com exemplos práticos e ferramentas que o usuário pode usar enquanto estuda.
+
+**O que o site oferece**
+- **Instrumentos:** apresentação do contrabaixo, da guitarra, da bateria e do violão,
+  com imagem e uma descrição do papel de cada um.
+- **Teoria musical:** notas, escala maior, acordes (tríades) e compasso, com tabelas
+  de apoio.
+- **Cifras:** o que é uma cifra, como ler os acordes e um exemplo de progressão para
+  praticar.
+- **Dicionário de acordes (interativo):** página com 10 acordes, cada um mostrando o
+  diagrama do braço do violão em SVG, com filtros por tipo (maior/menor) e dificuldade
+  (iniciante/intermediário). Ao clicar em um acorde, o som é tocado em tempo real.
+- **Navegação:** menu fixo em todas as páginas e página inicial com cards de acesso a
+  cada tópico.
+
+**Tecnologias e decisões**
+- HTML5 semântico em várias páginas, com `lang`, `charset` e `viewport` configurados.
+- CSS3 com Flexbox e Grid, layout responsivo para celular e tabelas com rolagem
+  horizontal em telas pequenas.
+- Paleta própria em roxo e amarelo, com contraste legível sobre o fundo escuro.
+- Acessibilidade básica: foco visível no teclado, texto alternativo nas imagens e
+  linhas de texto com largura limitada para facilitar a leitura.
+- Conteúdo separado em arquivos JSON (instrumentos, teoria, cifras, acordes). O HTML
+  é só estrutura; o JS renderiza tudo a partir dos dados.
+- Áudio gerado em tempo real com Web Audio API (osciladores e envelope), sem arquivos
+  de som.
+- Diagrama do braço do violão desenhado dinamicamente em SVG a partir das posições
+  dos dedos no JSON.
+
+**Estrutura do projeto**
+- `index.html`, `instrumentos.html`, `teoria.html`, `cifra.html`, `acordes.html`
+- `css/style.css`
+- `js/render-instrumentos.js`, `js/render-teoria.js`, `js/render-cifras.js`,
+  `js/render-acordes.js`, `js/audio.js`
+- `dados/instrumentos.json`, `dados/teoria.json`, `dados/cifras.json`,
+  `dados/acordes.json`
+
+**Evolução do projeto**
+O projeto começou com a ideia de unir conteúdo musical e uma loja de cursos. Ao
+retomá-lo, redefini o objetivo para um site informativo e educativo, reorganizei a
+estrutura em páginas por tópico e corrigi problemas de código, como erros de sintaxe
+no CSS e no viewport.
+
+Na segunda fase, o conteúdo foi extraído para arquivos JSON e o site passou a
+renderizar tudo via JavaScript, o que permite adicionar ou editar conteúdo sem mexer
+no HTML. Foi criada a página de dicionário de acordes, com diagrama em SVG, filtros
+e áudio em tempo real.
+
+**Próximos passos possíveis**
+- Calculadora de campo harmônico: escolher um tom e ver os 7 acordes que combinam,
+  com funções (tônica, subdominante, dominante) e progressões famosas.
+- Mais acordes no dicionário (sétimas, suspensos, com nona).
+- Biblioteca de cifras com busca, transposição de tom e modo de prática com metrônomo.
+- Página individual para cada instrumento.
+- Mais conteúdo de teoria (intervalos, tonalidades, escalas menores).
+- Modo de progresso: marcar o que já estudou e sugerir próximos tópicos.

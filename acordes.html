@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordes | Mundo da Música</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="instrumentos.html">Instrumentos</a>
+      <a href="teoria.html">Teoria musical</a>
+      <a href="cifra.html">Cifras</a>
+      <a href="acordes.html" class="ativo">Acordes</a>
+    </nav>
+
+    <h1 class="titulo-principal">Dicionário de acordes</h1>
+    <p class="intro">Clique em um acorde para ouvir o som.</p>
+
+    <div class="filtros">
+      <div class="filtro-grupo">
+        <span class="filtro-label">Tipo:</span>
+        <button class="filtro-btn ativo" data-filtro="tipo" data-valor="todos">Todos</button>
+        <button class="filtro-btn" data-filtro="tipo" data-valor="maior">Maior</button>
+        <button class="filtro-btn" data-filtro="tipo" data-valor="menor">Menor</button>
+      </div>
+      <div class="filtro-grupo">
+        <span class="filtro-label">Dificuldade:</span>
+        <button class="filtro-btn ativo" data-filtro="dificuldade" data-valor="todos">Todos</button>
+        <button class="filtro-btn" data-filtro="dificuldade" data-valor="iniciante">Iniciante</button>
+        <button class="filtro-btn" data-filtro="dificuldade" data-valor="intermediario">Intermediário</button>
+      </div>
+    </div>
+
+    <div id="lista-acordes" class="lista-acordes">
+      <!-- Os acordes são inseridos via JS a partir de dados/acordes.json -->
+    </div>
+
+    <div class="voltar">
+      <a href="index.html"><button>Voltar à página principal</button></a>
+    </div>
+
+    <script src="js/audio.js"></script>
+    <script src="js/render-acordes.js"></script>
+  </body>
+</html>
