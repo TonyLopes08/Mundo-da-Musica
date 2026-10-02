@@ -474,3 +474,8 @@ li {
   background-color: #6B7280;
   color: #F9FAFB;
 }
+
+.acorde-campo.ativo-audio {
+  border-color: #FBBF24;
+  background-color: #4A3B6E;
+}
