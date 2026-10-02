@@ -1,10 +1,10 @@
 // Configuração visual do diagrama
 const DIAGRAMA = {
   largura: 120,
-  altura: 150,
-  margemX: 15,
+  altura: 165,
+  margemX: 30,
   margemY: 25,
-  numCasas: 4,
+  numCasas: 5,
   numCordas: 6,
   raioBolinha: 9
 };
@@ -18,6 +18,17 @@ function desenharDiagrama(acorde) {
   const espacoCordas = larguraUtil / (numCordas - 1);
   const espacoCasas = alturaUtil / numCasas;
 
+  // Calcula a maior e a menor casa usadas pelos dedos
+  const maiorCasa = acorde.dedos.reduce((max, d) => Math.max(max, d.casa), 0);
+  const menorCasa = acorde.dedos.reduce((min, d) => Math.min(min, d.casa), Infinity);
+
+  // Define a casa inicial do diagrama
+  let casaInicial = 1;
+
+  if (maiorCasa > numCasas) {
+    casaInicial = Math.max(1, menorCasa);
+  }
+
   const estados = [
     acorde.corda6, acorde.corda5, acorde.corda4,
     acorde.corda3, acorde.corda2, acorde.corda1
@@ -25,6 +36,7 @@ function desenharDiagrama(acorde) {
 
   let svg = `<svg viewBox="0 0 ${largura} ${altura}" class="diagrama" xmlns="http://www.w3.org/2000/svg">`;
 
+  // Símbolos acima (X, O ou vazio)
   estados.forEach((estado, i) => {
     const x = margemX + i * espacoCordas;
     const y = margemY - 10;
@@ -36,21 +48,34 @@ function desenharDiagrama(acorde) {
     }
   });
 
+  // Etiqueta indicando a casa inicial (aparece SEMPRE)
+  {
+    const x = margemX - 5;
+    const y = margemY + 4;
+    svg += `<text x="${x}" y="${y}" text-anchor="end" class="etiqueta-casa">${casaInicial}ª</text>`;
+  }
+
+  // Linhas verticais (cordas)
   for (let i = 0; i < numCordas; i++) {
     const x = margemX + i * espacoCordas;
     svg += `<line x1="${x}" y1="${margemY}" x2="${x}" y2="${margemY + alturaUtil}" class="corda" />`;
   }
 
+  // Linhas horizontais (casas)
   for (let i = 0; i <= numCasas; i++) {
     const y = margemY + i * espacoCasas;
     const grossura = i === 0 ? 3 : 1;
     svg += `<line x1="${margemX}" y1="${y}" x2="${margemX + larguraUtil}" y2="${y}" class="casa" stroke-width="${grossura}" />`;
   }
 
+  // Bolinhas dos dedos
   acorde.dedos.forEach(dedo => {
     const indiceCorda = 6 - dedo.corda;
     const x = margemX + indiceCorda * espacoCordas;
-    const y = margemY + (dedo.casa - 0.5) * espacoCasas;
+
+    // Posição relativa à casa inicial
+    const casaRelativa = dedo.casa - casaInicial + 1;
+    const y = margemY + (casaRelativa - 0.5) * espacoCasas;
 
     svg += `<circle cx="${x}" cy="${y}" r="${raioBolinha}" class="bolinha" />`;
     svg += `<text x="${x}" y="${y + 4}" text-anchor="middle" class="numero-dedo">${dedo.dedo}</text>`;
