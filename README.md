@@ -29,7 +29,7 @@ ferramentas interativas que o usuário pode usar enquanto estuda.
 - Git + GitHub para versionamento
 
 ## 📁 Estrutura
-.
+
 ├── index.html # Página inicial
 ├── instrumentos.html # Instrumentos musicais
 ├── teoria.html # Teoria musical
