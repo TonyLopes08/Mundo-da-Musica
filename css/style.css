@@ -376,3 +376,43 @@ li {
   border-color: #FBBF24;
   background-color: #4A3B6E;
 }
+
+/* Seletor de tom */
+.seletor-tom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 20px 0;
+}
+
+.tom-btn {
+  background-color: transparent;
+  color: #EDE9FE;
+  border: 1px solid #5B4A8A;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tom-btn:hover {
+  border-color: #A78BFA;
+}
+
+.tom-btn.ativo {
+  background-color: #FBBF24;
+  border-color: #FBBF24;
+  color: #2A1F3D;
+}
+
+/* Container dos cards (placeholder do 3.2.2) */
+.cards-campo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 30px 20px;
+  min-height: 100px;
+}
